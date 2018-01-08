@@ -6,11 +6,9 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected void onCreate(Bundle savedInstanceState) { // bundle es como una maleta
+        super.onCreate(savedInstanceState);//creador de la clase padre AppCompatActivity
+        setContentView(R.layout.activity_main); //setea que layout(xml,interfaz graf) se va a lanzar
 
-        //Haciendo comentario
-        // Comentario 23
     }
 }
