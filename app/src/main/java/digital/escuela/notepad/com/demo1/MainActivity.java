@@ -37,4 +37,13 @@ Carpeta drawable
     van imagenes
     Instala solo las images de acuerdo a las densidades del celular
 
+Densidades de Imagenes deberian ser en escala 3:4:6:8:12:16
+
+192x192(escala mas grande)(192/16=12)()
+3:36*36 ldpi --Puede estar extinto--
+4:48*18 mdpi
+6:72*72 hdpi
+8:96*96 xhdpi
+12:124*124 xxhdpi
+16:192*192 xxxhdpi
  */
