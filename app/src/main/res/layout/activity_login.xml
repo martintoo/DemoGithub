@@ -5,9 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/oreolg"
     tools:context="digital.escuela.notepad.com.demo1.Activities.LoginActivity">
-    <TextView
-        android:layout_width="wrap_content"
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"/>
+    </android.support.design.widget.TextInputLayout>
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login Activity"/>
+        android:text="LOG IN"/>
+
+
 </LinearLayout>
