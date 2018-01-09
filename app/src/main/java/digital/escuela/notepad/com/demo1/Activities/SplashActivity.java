@@ -1,4 +1,4 @@
-package digital.escuela.notepad.com.demo1;
+package digital.escuela.notepad.com.demo1.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import digital.escuela.notepad.com.demo1.R;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -21,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //Los intent sirven para pasar de activity en activity
-                Intent intent=new Intent(SplashActivity.this,MainActivity.class);
+                Intent intent=new Intent(SplashActivity.this,LoginActivity.class);
                 startActivity(intent);
                 finish();//para destruir el SplashActivity y no gaste memoria
             }
