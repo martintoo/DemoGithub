@@ -11,7 +11,7 @@
         android:id="@+id/textoo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hola Mundo"/>
+        android:text="@string/good_morning"/>
     <Button
         android:id="@+id/boton"
         android:text="Cambiar texto"
