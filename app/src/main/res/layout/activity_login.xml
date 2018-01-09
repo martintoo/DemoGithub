@@ -31,7 +31,7 @@
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LOG IN"/>
-
-
+        android:text="LOG IN"
+        android:textColor="@color/colorAccent"
+        android:background="@drawable/boton"/>
 </LinearLayout>
