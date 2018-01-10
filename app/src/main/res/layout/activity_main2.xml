@@ -20,4 +20,13 @@
             android:layout_height="wrap_content"
             android:text="Hola mundo!!!"/>
     </LinearLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu"
+        app:itemTextColor="@android:color/black"
+        app:itemIconTint="@android:color/black">
+    </android.support.design.widget.NavigationView>
 </android.support.v4.widget.DrawerLayout>
