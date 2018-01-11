@@ -47,6 +47,18 @@ public class MainActivity extends AppCompatActivity {
                             item.setChecked(true);
                         }
                         drawerLayout.closeDrawers();
+                        switch(item.getItemId()){
+                            case R.id.item_principal:
+                                break;
+                            case R.id.item_pendientes:
+                                break;
+                            case R.id.item_supermercado:
+                                break;
+                            case R.id.item_vacaciones:
+                                break;
+
+
+                        }
                         return false;
                     }
                 });
