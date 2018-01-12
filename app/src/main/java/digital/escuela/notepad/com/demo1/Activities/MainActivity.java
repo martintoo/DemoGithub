@@ -2,6 +2,7 @@ package digital.escuela.notepad.com.demo1.Activities;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
+    FloatingActionButton floatingActionButton;
 
 
     @Override
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout=(DrawerLayout) findViewById(R.id.drawer);
         navigationView=(NavigationView) findViewById(R.id.navigationView);
+        floatingActionButton=(FloatingActionButton) findViewById(R.id.fab);
 
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -90,6 +93,12 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"fab",Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
