@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"fab",Toast.LENGTH_SHORT).show();
             }
         });
+        setFragment(0);
 
     }
 
