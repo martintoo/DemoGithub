@@ -36,10 +36,18 @@ public class NotesAdapters extends RecyclerView.Adapter<NotesAdapters.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.id.setText(String.valueOf(noteList.get(position).getId()));
         holder.titulo.setText(noteList.get(position).getTitle());
         holder.body.setText(noteList.get(position).getBody());
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                noteList.remove(position);
+                //actualizar la vista
+                notifyDataSetChanged();
+            }
+        });
     }
 
     @Override
