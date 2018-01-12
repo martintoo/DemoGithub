@@ -3,6 +3,8 @@ package digital.escuela.notepad.com.demo1.Activities;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,8 +15,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
+import digital.escuela.notepad.com.demo1.Fragments.MainFragment;
+import digital.escuela.notepad.com.demo1.Fragments.PendientesFragment;
+import digital.escuela.notepad.com.demo1.Fragments.SupermercadoFragment;
+import digital.escuela.notepad.com.demo1.Fragments.VacacionesFragment;
 import digital.escuela.notepad.com.demo1.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -49,12 +56,17 @@ public class MainActivity extends AppCompatActivity {
                         drawerLayout.closeDrawers();
                         switch(item.getItemId()){
                             case R.id.item_principal:
+                                setFragment(0);
+                                //Toast.makeText(getApplicationContext(),"Principal",Toast.LENGTH_SHORT).show();
                                 break;
                             case R.id.item_pendientes:
+                                setFragment(1);
                                 break;
                             case R.id.item_supermercado:
+                                setFragment(2);
                                 break;
                             case R.id.item_vacaciones:
+                                setFragment(3);
                                 break;
 
 
@@ -79,6 +91,34 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
+    }
+
+    public void setFragment(int pos){
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        //iniciamos transaccion del fragmentManager
+        FragmentTransaction transaction=fragmentManager.beginTransaction();
+        switch (pos){
+            case 0:
+                MainFragment fragment=new MainFragment();
+                transaction.replace(R.id.fragment,fragment);
+                transaction.commit();
+                break;
+            case 1:
+                PendientesFragment fragmentPendientes=new PendientesFragment();
+                transaction.replace(R.id.fragment,fragmentPendientes);
+                transaction.commit();
+                break;
+            case 2:
+                SupermercadoFragment fragmentSupermercado=new SupermercadoFragment();
+                transaction.replace(R.id.fragment,fragmentSupermercado);
+                transaction.commit();
+                break;
+            case 3:
+                VacacionesFragment fragmentVaciones=new VacacionesFragment();
+                transaction.replace(R.id.fragment,fragmentVaciones);
+                transaction.commit();
+                break;
+        }
     }
 }
 /*
