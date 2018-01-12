@@ -1,13 +1,19 @@
 package digital.escuela.notepad.com.demo1.Fragments;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +30,7 @@ public class MainFragment extends Fragment {
     RecyclerView recyclerView;
     List<Note> noteList;
     NotesAdapters adapter;
+    FloatingActionButton floatingActionButton;
 
     //para crear la vista
     @Nullable
@@ -40,6 +47,7 @@ public class MainFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recyclerView=(RecyclerView) view.findViewById(R.id.recyclerView);
+        floatingActionButton=(FloatingActionButton) view.findViewById(R.id.fab);
         //asignarle un linearLayoutManager para que ordene la lista
         //por defecto tiene 3 formas de mostrar, de arriba a abajo o viceversa, tabla con
         //celdas, de derecha a izquierda
@@ -51,6 +59,31 @@ public class MainFragment extends Fragment {
         initializedData();
         adapter=new NotesAdapters(getActivity().getApplicationContext(),noteList);
         recyclerView.setAdapter(adapter);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alert=new AlertDialog.Builder(getActivity());
+                final EditText editText=new EditText(getActivity());
+                editText.setBackgroundColor(Color.GRAY);
+                alert.setMessage("Agregar Elemento");
+                alert.setTitle("Coloca el nombre");
+                alert.setView(editText);
+                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        noteList.add(new Note(200,editText.getText().toString(),"Cuerpooo"));
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                alert.show();
+            }
+        });
     }
 
     private void initializedData() {

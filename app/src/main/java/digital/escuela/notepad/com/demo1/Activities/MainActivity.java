@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
-    FloatingActionButton floatingActionButton;
 
 
     @Override
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout=(DrawerLayout) findViewById(R.id.drawer);
         navigationView=(NavigationView) findViewById(R.id.navigationView);
-        floatingActionButton=(FloatingActionButton) findViewById(R.id.fab);
 
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -93,12 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"fab",Toast.LENGTH_SHORT).show();
-            }
-        });
+
         setFragment(0);
 
     }
